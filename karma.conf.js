@@ -17,7 +17,8 @@ files = [
 ];
 
 // list of files to exclude
-exclude = [];
+exclude = [
+];
 
 // test results reporter to use
 // possible values: dots || progress || growl
@@ -47,7 +48,7 @@ autoWatch = false;
 // - Safari (only Mac)
 // - PhantomJS
 // - IE (only Windows)
-browsers = ['Chrome'];
+browsers = ['C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'];
 
 // If browser does not capture in given timeout [ms], kill it
 captureTimeout = 5000;

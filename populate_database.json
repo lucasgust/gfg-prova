@@ -1,0 +1,55 @@
+{
+    "_id" : ObjectId("51b8ac65e4b0b81dc2e743eb"),
+    "title" : "Título do formulário",
+    "fields" : [ 
+        {
+            "label" : "nome",
+            "type" : "text",
+            "required" : true,
+            "placeholder" : "Nome:",
+            "radios" : null
+        }, 
+        {
+            "label" : "sexo",
+            "type" : "radio",
+            "required" : true,
+            "radios" : [ 
+                {
+                    "label" : "M",
+                    "value" : "masculino"
+                }, 
+                {
+                    "label" : "F",
+                    "value" : "feminino"
+                }
+            ],
+            "value" : 1
+        }, 
+        {
+            "label" : "email",
+            "type" : "email",
+            "required" : false,
+            "placeholder" : "Digite um e-mail",
+            "radios" : null
+        }, 
+        {
+            "label" : "idade",
+            "type" : "number",
+            "required" : false,
+            "radios" : null
+        }
+    ],
+    "data" : [ 
+        {
+            "nome" : "Guilherme",
+            "sexo" : "masculino",
+            "email" : "guilherme@email.com",
+            "idade" : 27
+        }, 
+        {
+            "nome" : "Rafael",
+            "sexo" : "masculino"
+        }
+    ],
+	"dataCount" : 2
+}
