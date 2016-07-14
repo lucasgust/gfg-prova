@@ -2,33 +2,35 @@
 
 describe('Testando o NewCtrl', function() {
  
-  // beforeEach(function(){
-  //   this.addMatchers({
-  //     toEqualData: function(expected) {
-  //       return angular.equals(this.actual, expected);
-  //     }
-  //   });
-  // });
+ beforeEach(function(){
+   this.addMatchers({
+     toEqualData: function(expected) {
+       return angular.equals(this.actual, expected);
+     }
+   });
+ });
  
-  // beforeEach(module('provaClientApp'));
+ beforeEach(module('provaClientApp'));
  
  
   describe('NewCtrl', function(){
-    // var scope, ctrl, $httpBackend;
+   var scope, ctrl, $httpBackend;
  
-    // beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
-    //   $httpBackend = _$httpBackend_;
-    //   $httpBackend.expectGET('@@host/templates').respond([{id: '1'}, {id: '2'}]);
+   beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+     $httpBackend = _$httpBackend_;
+     //$httpBackend.expectGET('@@host/templates').respond([{id: '1'}, {id: '2'}]);
+	 $httpBackend.expectPOST('@@host/templates').respond({id: '1'});
  
-    //   scope = $rootScope.$new();
-    //   ctrl = $controller('NewCtrl', {$scope: scope});
-    // }));
+     scope = $rootScope.$new();
+     ctrl = $controller('NewCtrl', {$scope: scope});
+   }));
  
-    it('deve receber 2 templates', function() {
+    //it('deve receber 2 templates', function() {
+    it('deve adicionar 1 template', function() {
       expect(1).toBe(1);
-      //$httpBackend.flush();
+    $httpBackend.flush();
  
-      //expect(scope.formList).toEqualData([{id: '1'}, {id: '2'}]);
+    expect(scope.formList).toEqualData({id: '1'});
     });
   });
 });

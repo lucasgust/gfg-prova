@@ -1,4 +1,5 @@
 var express = require('express');
+var errorHandler = require('express-error-handler');
 var path = require('path');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
@@ -39,6 +40,12 @@ TemplateSchema.pre('save', function (next) {
 mongoose.connect('mongodb://localhost/dafiti');
 var Template = mongoose.model('Template', TemplateSchema, 'template');
 /****** MODEL ******/
+
+var handler = errorHandler({
+	static: {
+		'404': 'app/dist/404.html'
+	}
+});
 
 var app = express();
 
@@ -133,6 +140,9 @@ app.post('/coletor/templates/:id/data', function(req, res, next) {
     res.sendStatus(200);
 });
 /****** ROUTES ******/
+
+app.use(errorHandler.httpError(404));
+app.use(handler);
 
 var port = process.env.PORT || 8080;
 app.listen(port);
