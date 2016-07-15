@@ -1,0 +1,15 @@
+{
+    "title" : "novo formulario",
+    "dataCount" : 0,
+    "data" : [],
+    "fields" : [ 
+        {
+            "type" : "text",
+            "label" : "campo",
+            "placeholder" : "digite um valor",
+            "maxLength" : 10,
+            "radios" : null,
+            "value" : "padrao"
+        }
+    ]
+}

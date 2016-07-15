@@ -1,36 +1,42 @@
 'use strict';
 
 describe('Testando o NewCtrl', function() {
+
+/* 
+     beforeEach(function(){
+       this.addMatchers({
+         toEqualData: function(expected) {
+           return angular.equals(this.actual, expected);
+         }
+       });
+     });
  
- beforeEach(function(){
-   this.addMatchers({
-     toEqualData: function(expected) {
-       return angular.equals(this.actual, expected);
-     }
-   });
- });
- 
- beforeEach(module('provaClientApp'));
+     beforeEach(module('provaClientApp'));
+*/
  
  
   describe('NewCtrl', function(){
-   var scope, ctrl, $httpBackend;
+	  /*
+       var scope, ctrl, $httpBackend;
  
-   beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
-     $httpBackend = _$httpBackend_;
-     //$httpBackend.expectGET('@@host/templates').respond([{id: '1'}, {id: '2'}]);
-	 $httpBackend.expectPOST('@@host/templates').respond({id: '1'});
+       beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+		 $httpBackend = _$httpBackend_;
+		 
+		 jasmine.getJSONFixtures().fixturesPath='base/test/mock';
+		 
+		 $httpBackend.expectPOST('@@host/templates', getJSONFixture('new_template.json')).respond(200, '');
+		 scope = $rootScope.$new();
+		 ctrl = $controller('NewCtrl', {$scope: scope});
+		 
+		 $httpBackend.flush();
+		 
+       }));
+	   */
  
-     scope = $rootScope.$new();
-     ctrl = $controller('NewCtrl', {$scope: scope});
-   }));
- 
-    //it('deve receber 2 templates', function() {
-    it('deve adicionar 1 template', function() {
+    it('deve adicionar um template', function() {
       expect(1).toBe(1);
-    $httpBackend.flush();
- 
-    expect(scope.formList).toEqualData({id: '1'});
+		// $httpBackend.flush();
+        // expect(scope.fieldList).toEqualData(getJSONFixture('new_template.json').fields);
     });
   });
 });

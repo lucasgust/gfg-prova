@@ -10,14 +10,19 @@ files = [
   'app/components/angular/angular.js',
   'app/components/angular-resource/angular-resource.js',
   'app/components/angular-mocks/angular-mocks.js',
+  'app/components/jasmine/jasmine-jquery.js',
+  'app/components/jquery/jquery.min.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
-  'test/mock/**/*.js',
+  //'test/mock/**/*.js',
+  {pattern: 'test/mock/*.json', watched: true, served: true, included: false},
   'test/spec/**/*.js'
 ];
 
 // list of files to exclude
 exclude = [
+  'app/scripts/models/*.js',
+  'app/scripts/routes/*.js'
 ];
 
 // test results reporter to use
